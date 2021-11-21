@@ -169,6 +169,17 @@ def DS():
             print("\nInvalid Choice..")
         input("\nPress any key to continue...")
 
+def DSA():
+    while(1):
+        os.system("clear")
+        print("n1.Bubble Sort")
+        ch =  int(input("\nEnter Choice :: "))
+        if (ch==1):
+            os.system("python3 bubble.py "+x)
+        else:
+            print("\nInvalid Choice..")
+
+
 
 while(1):
     os.system("clear")
@@ -181,7 +192,7 @@ while(1):
     elif(ch==3):
         Cont();
     elif(ch==4):
-        pass
+        DSA();
     elif(ch==5):
         exit()
     else:
