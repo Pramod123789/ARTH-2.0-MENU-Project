@@ -71,6 +71,56 @@ def Zen(s1):
             print("Invalid Choice..")
         input("\nPress any key to Continue...")
 
+def Docker(s):
+    while(1):
+        os.system("clear")
+        print(s+"\n1. Images\n2. Total Containers\n3. Containers in running state\n4. Launch an OS\n5. Start and Get inside launched OS\n6. Download an Image\n7. Go back\n")
+        ch = int(input("\nEnter Your Choice --> "))
+        if(ch==1):
+            os.system("docker images")
+        elif(ch==2):
+            os.system("docker ps -a")
+        elif(ch==3):
+            os.system("docker ps")
+        elif(ch==4):
+            os.system("docker images")
+            s1 = input("Which image you want to use? --> ")
+            name = input("OS name? --> ")
+            os.system("docker run -it --name="+name+"   "+s1)
+            os.system("exit")
+            print("OS named "+name+" is created")
+        elif(ch==5):
+            os.system("docker ps -a")
+            x = input("\nEnter desire 'name' or 'OS ID' :: ")
+            os.system("docker start "+x)
+            os.system("docker attach "+x)
+        elif(ch==6):
+            s1 = input("\nImage name to be downloaded? --> ")
+            os.system("docker pull "+s1)
+            print("\nImage Downloaded")
+            os.system("docker images")
+        elif(ch==7):
+            return;
+        else:
+            print("Invalid Input..")
+        input("\nPress any key to Continue..")
+
+
+def Cont():
+    while(1):
+        os.system("clear")
+        print("\n1. Docker\n2. Kubernetes\n3. Go Back\n")
+        ch = int(input("\nEnter your choice --> "))
+        if(ch==1):
+            Docker("\nTry out Some Docker Commands");
+        elif(ch==2):
+            pass
+        elif(ch==3):
+            return;
+        else:
+            print("\nInvalid Choice..")
+        if(ch!=3):
+            input("\nPress any Key to Continue...")
 
 def Linux(s1):
     while(1):
@@ -104,6 +154,22 @@ def Linux(s1):
             input("\nPress any key to Continue...")
 
 
+
+def DS():
+    while(1):
+        os.system("clear")
+        print("\n1. Salary Prediction(LR)\n2. Go back")
+        ch = int(input("\nEnter Choice :: "))
+        if(ch==1):
+            x = input("How much yrs's of experience? :: ")
+            os.system("python3 test.py "+x)
+        elif(ch==2):
+            return;
+        else:
+            print("\nInvalid Choice..")
+        input("\nPress any key to continue...")
+
+
 while(1):
     os.system("clear")
     print("\n1. Basic Linux Commands\n2. DS\n3. Containers\n4. DSA\n5. Quit\n")
@@ -111,12 +177,13 @@ while(1):
     if(ch==1):
         Linux("\nTry Some Linux Commands....")
     elif(ch==2):
-        pass
+        DS();
     elif(ch==3):
-        pass
+        Cont();
     elif(ch==4):
         pass
     elif(ch==5):
         exit()
     else:
         print("\nInvalid Choice")
+
