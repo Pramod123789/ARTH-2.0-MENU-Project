@@ -1,18 +1,35 @@
-def bubble_sort(list1):  
-   # We can stop the iteration once the swap has done  
-    has_swapped = True  
+import time
+def bubbleSort(arr):
+    n = len(arr)
   
-    while(has_swapped):  
-        has_swapped = False  
-        for i in range(len(list1) - 1):  
-            if list1[i] > list1[i+1]:  
-                # Swap  
-                list1[i], list1[i+1] = list1[i+1], list1[i]  
-                has_swapped = True  
-    return list1  
+   
+    for i in range(n):
+        swapped = False
+ 
+       
+        for j in range(0, n-i-1):
   
-  
-list1 = [5, 3, 8, 6, 7, 2]  
-print("The unsorted list is: ", list1)  
-# Calling the bubble sort function  
-print("The sorted list is: ", bubble_sort(list1))
+            
+            if arr[j] > arr[j+1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+ 
+       
+        if swapped == False:
+            break
+          
+
+arr=[]
+n=int(input("enter no of elements:"))
+print("Enter THe Elemnts : \n")
+for i in range(0,n):
+    element=int(input())
+    arr.append(element)
+
+bubbleSort(arr) 
+print ("Sorted array :")
+for i in range(len(arr)):
+    print ("%d" %arr[i],end=" ")
+input("\nPress any key to continue...")
+
+
